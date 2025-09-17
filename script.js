@@ -220,9 +220,10 @@ if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').ma
 // Download CV handler
 document.getElementById('downloadCV').addEventListener('click', ()=>{
   const link = document.createElement('a');
-  link.href = 'assets/Hassan-CV.docx';   // yahan apni file ka path set karein
+  link.href = 'Hassan-CV.docx';   // yahan apni file ka path set karein
   link.download = 'Hassan-CV.docx'; // download hone wali file ka naam
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 });
+
