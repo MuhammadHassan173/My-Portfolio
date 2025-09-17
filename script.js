@@ -106,9 +106,9 @@ if(profileCard){
     const r = profileCard.getBoundingClientRect();
     const x = (e.clientX - r.left)/r.width - 0.5;
     const y = (e.clientY - r.top)/r.height - 0.5;
-    profileCard.style.transform = `rotateY(${x*12}deg) rotateX(${-y*12}deg) translateZ(10px)`;
+    profileCard.style.transform = rotateY(${x*12}deg) rotateX(${-y*12}deg) translateZ(10px);
   });
-  profileCard.addEventListener('mouseleave', ()=>{ profileCard.style.transform = `rotateY(0) rotateX(0)`; });
+  profileCard.addEventListener('mouseleave', ()=>{ profileCard.style.transform = rotateY(0) rotateX(0); });
 }
 
 // ------------------------------
@@ -182,7 +182,7 @@ form.addEventListener('submit', (e)=>{
       if(p.y > h+10) p.y = -10;
 
       ctx.beginPath();
-      ctx.fillStyle = `rgba(125,211,252,${p.alpha})`;
+      ctx.fillStyle = rgba(125,211,252,${p.alpha});
       ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
       ctx.fill();
     });
@@ -195,7 +195,7 @@ form.addEventListener('submit', (e)=>{
         const d = Math.sqrt(dx*dx+dy*dy);
         if(d < 110){
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(125,211,252,${(0.08*(110-d)/110)})`;
+          ctx.strokeStyle = rgba(125,211,252,${(0.08*(110-d)/110)});
           ctx.lineWidth = 1;
           ctx.moveTo(a.x,a.y);
           ctx.lineTo(b.x,b.y);
@@ -226,4 +226,3 @@ document.getElementById('downloadCV').addEventListener('click', ()=>{
   link.click();
   document.body.removeChild(link);
 });
-
